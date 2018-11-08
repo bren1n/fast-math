@@ -1,0 +1,192 @@
+<!--
+  Generated template for the GeometriaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton="false" color="secondary">
+    <ion-title>Quiz</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding id="main-quiz">
+
+  <div *ngIf = "acabou == ''">
+    <p id="textoQuestao">Questão {{questao}}</p>
+    <p id="textoTempo">{{minutos}}:{{segundos}}</p>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 1">
+    <p class="pergunta">Qual é o volume de uma lata de óleo perfeitamente cilíndrica, cujo diâmetro é 8 cm e a altura é 20 cm?</p>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">3,84 l</button>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">96 mL</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">384 mL</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">960 mL</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 2">
+    <p class="pergunta">Se a soma de dois ângulos internos de um polígono regular é 1080°, então o número de lados dele é?</p>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">8</button>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">7</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">6</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">5</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 3">
+    <p class="pergunta">Se o comprimento de um raio de um círculo é aumentado em 50%, então, o percentual de acréscimo de sua área é?</p>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">110</button>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">115</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">120</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">125</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 4">
+    <p class="pergunta">Qual é o número máximo de bolinhas de diâmetro d que cabem no interior de um cubo de aresta 2d?</p>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">12</button>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">4</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">2</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">8</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 5">
+    <p class="pergunta">Lucas tem um terreno retangular. Sabendo que a largura desse terreno é 6 metros menor que seu comprimento, e que seu perímetro é de 48 metros, então sua área em m<sup>2</sup> é de:</p>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">135</button>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">125</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">90</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">60</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 6">
+    <p class="pergunta">Em um triangulo retangulo a medida de um cateto é o dobro da medida do outro. Se a hipotenusa mede &radic;125, então temos que o maior cateto mede?</p>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">8</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">9</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">10</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">11</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 7">
+    <p class="pergunta">Cláudio dividiu um círculo em 15 setores circulares. As medidas dos ângulos centrais desses setores, em graus, são números inteiros positivos e formam uma progressão aritmética. A menor medida possível, em graus, do angulo central do menor desses setores é:</p>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">1</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">2</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">3</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">4</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 8">
+    <p class="pergunta">Sabe-se que a soma dos ângulos internos de um polígono é igual a 1260°. Se esse polígono é regular, então cada angulo externo desse polígono é igual a:</p>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">140°</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">40°</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">126°</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">54°</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 9">
+    <p class="pergunta">Para montar um cubo, dispõe-se de uma folha de cartolina retangular, de 30 cm de comprimento de comprimento e 20 cm de largura. As faces do cubo, uma vez recortadas, serão unidas com fita adesiva. Qual é, em centímetros, a medida máxima da aresta desse cubo?</p>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">7</button>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">8</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">9</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">10</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 10">
+    <p class="pergunta">Um terreno quadrado tem uma área total de 625 m<sup>2</sup>. Logo, o perímetro desse mesmo terreno, em metros, mede:</p>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">100</button>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">120</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">140</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">160</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 11">
+    <p class="pergunta">Pequenas caixas cúbicas de arestas medindo 20 cm serão guardadas em um caixote maior, também com a forma de cubo, cujas arestas medem 60 cm. Considerando que o caixote deverá ser tampado, o número máximo de caixas que poderá ser ali armazenado é igual a:</p>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">27</button>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">3</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">6</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">18</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 12">
+    <p class="pergunta">Se um ângulo mede 85°45'54", qual é seu complemento?</p>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">01°02'03"</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">04º14'06”</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">05°14'22"</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">06º14'04"</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 13">
+    <p class="pergunta">Calcule o suplemento de 122°50'44".</p>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">43°</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">57°09'16"</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">45°57'23"</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">34°02'11"</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 14">
+    <p class="pergunta">Qual é o ponto de encontro entre as retas: x – y = 0 e x + y – 4 = 0</p>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">(2, 0)</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">(0, 2)</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">(2, 2)</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">(0, 0)</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 15">
+    <p class="pergunta">Clarence desenhou o triângulo determinado pelas coordenadas dos pontos cartesianos A(7;5), B(3;2) e C(7;2). Ao calcular a área desse triângulo, o valor obtido foi:</p>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">3</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">4</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">6</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">12</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 16">
+    <p class="pergunta">Um triangulo com 18 cm de base tem área igual a 144cm<sup>2</sup>. Se aumentarmos sua altura em 20% e diminuirmos sua base em 25%, observamos que a nova área é:</p>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">15% inferior</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">12% superior</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">10% inferior</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">8% superior</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 17">
+    <p class="pergunta">Cadu pretende forrar a sua sala com uma laje, mas ele não sabe o volume de concreto que utilizará. Tendo em vista que sua sala mede 4 m de comprimento por 3 m de largura, e a espessura da sua laje é de 30 cm, qual o volume da laje?</p>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">4,20 m<sup>3</sup></button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">3,60 m<sup>3</sup></button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">5,00 m<sup>3</sup></button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">4,60 m<sup>3</sup></button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 18">
+    <p class="pergunta">Qual a área e o perímetro de um campo de futebol, de base 30 m e altura 6 m?</p>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">A= 100 m², P= 72m</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">A= 150 m², P= 60m</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">A= 180 m², P= 72 m</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">A= 120 m², P= 50 m</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 19">
+    <p class="pergunta">Qual é a distância entre os centros de duas faces adjacentes de um cubo de aresta 4?</p>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">2&radic;2</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">1&radic;2</button>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">3&radic;2</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">3&radic;3</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 20">
+    <p class="pergunta">Sabendo que a área de um quadrado é 36cm², qual é seu perímetro?</p>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">18 cm</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">24 cm</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">26 cm</button>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">36 cm</button>
+  </div>
+
+
+  <div class="resultado" *ngIf = "contador == 21">
+    <ion-card-header id="resultado">
+    <p id="textoResultado">Seu resultado foi: {{pontos}}/{{questao}}</p>
+    <p id="textoResultado">Tempo: {{minutos}}:{{segundos}}</p>
+    <button class="botao" ion-button block default (click)="menu()">MENU PRINCIPAL</button>
+    <button class="botao"  ion-button block default (click)="tentarNovamente()">TENTAR NOVAMENTE</button>
+    </ion-card-header>
+  </div>
+
+</ion-content>

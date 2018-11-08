@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar hideBackButton="true" color="secondary">
+    <ion-title>Início</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="main-home">
+  <h1 id="titulo">Fast Math</h1>
+  <button id="botao" (click)="mudaPageAritmetica()" ion-button block default>INICIAR QUIZ DE ARITMÉTICA</button>
+  <button id="botao" (click)="mudaPageAlgebra()" ion-button block default>INICIAR QUIZ DE ÁLGEBRA</button>
+  <button id="botao" (click)="mudaPageGeometria()" ion-button block default>INICIAR QUIZ DE GEOMETRIA</button>
+  <p>{{segundos}}</p>
+</ion-content>

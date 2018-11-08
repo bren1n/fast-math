@@ -1,0 +1,198 @@
+<!--
+  Generated template for the QuizPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton="false" color="secondary">
+    <ion-title>Quiz</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="main-quiz">
+  <div *ngIf = "acabou == ''">
+    <p id="textoQuestao">Questão {{questao}}</p>
+    <p id="textoTempo">{{minutos}}:{{segundos}}</p>
+  </div>
+  <div class="questao" *ngIf = "contador == 1">
+    <p class="pergunta">Qual fração imprópria corresponde ao número misto 4 3/5 ?</p>
+    <button class="botao" [style.background]="corErrada1" ion-button block default (click)="mudaCor(0)" [disabled]="desativaBotao">7/2</button>
+    <button class="botao" [style.background]="corErrada3" ion-button block default (click)="mudaCor(2)" [disabled]="desativaBotao">11/2</button>
+    <button class="botao" [style.background]="corErrada2" ion-button block default (click)="mudaCor(1)" [disabled]="desativaBotao">15/4</button>
+    <button class="botao" [style.background]="corCorreta" ion-button block default (click)="mudaCor(3)" [disabled]="desativaBotao">23/5</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 2">
+      <p class="pergunta">São frações equivalentes de 3/4, 8/2 e 12/5, respectivamente:</p>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>6/8, 12/4, 20/10</button>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>6/8, 16/4, 22/5</button>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>6/8, 16/4, 36/15</button>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>6/4, 16/4, 36/20</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 3">
+      <p class="pergunta">Qual área a ser desmatada de uma região de 200 km², considerando que só é permitido derrubar somente 5% dela?</p>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>80 km²</button>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>12 km²</button>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>10 km²</button>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>35 km²</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 4">
+      <p class="pergunta">Os custos de uma prefeitura aumentaram cerca de 18%. Se inicialmente a prefeitura gastava R$ 900.000,00, quanto ela passará a gastar?</p>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>1.400.000,00</button>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>1.162.000,00</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>987.000,00</button>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>1.062.000,00</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 5">
+      <p class="pergunta">As idades dos alunos de uma turma são respectivamente iguais a: 11;11;11;12;12;13;13;13;13;15;16. A moda e a mediana desses 11 valores correspondem a:</p>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>13, 13</button>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>15, 12</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>12, 11</button>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>11, 13</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 6">
+      <p class="pergunta">A professora Maria Paula registrou as notas de sete alunos, obtendo os seguintes valores: 2, 7, 5, 3, 4, 7 e 8. A mediana e a moda das notas são:</p>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>3 e 8</button>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>3 e 7</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>5 e 7</button>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>5 e 8</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 7">
+      <p class="pergunta">Qual é a média ponderada dos números 1, 2, 3, 4, 5, 6, 7, 8 e 9, sabendo que seus respectivos pesos são 5, 5, 5, 5, 4, 4, 4, 4, 2?</p>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>2,8</button>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>4,5</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>4,2</button>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>2,9</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 8">
+      <p class="pergunta">Qual é a velocidade de um automóvel que gasta 2 horas em um percurso, sabendo que gastaria 6 horas nesse mesmo percurso se estivesse a 30 km/h?</p>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>90 km/h</button>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>60 km/h</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>30 km/h</button>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>10 km/h</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 9">
+      <p class="pergunta">Um carro percorreu a metade de uma estrada viajando a 30km/h e a outra metade da estrada a 60km/h. Sua velocidade média no percurso total foi:</p>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>54 km/h</button>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>60 km/h</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>48 km/h</button>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>40 km/h</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 10">
+      <p class="pergunta">O cálculo correto da densidade demográfica de um determinado país é a:</p>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>Pop. absoluta + nasc. vivos</button>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>Habitantes * área</button>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>Habitantes / área</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>Mortalidade / natalidade</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 11">
+      <p class="pergunta">Uma região tem população de 6.523.222 habitantes. A sua área é de 340.111,376 km². A densidade demográfica dessa região é de, aproximadamente:</p>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>23 hab/km²</button>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>30 hab/km²</button>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>19 hab/km²</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>25 hab/km²</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 12">
+      <p class="pergunta">Um colégio tem 280 alunos. Sabe-se que 60% dos alunos desse colégio são meninas. Se 20 meninas foram transferidas, quantas meninas permanecem na escola?</p>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>148</button>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>128</button>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>118</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>108</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 13">
+      <p class="pergunta">Cadu comprou 31 baterias para as calculadoras de seus alunos e pagou R$ 527,00. O preço, em R$, de cada bateria é:</p>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>14</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>10</button>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>13</button>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>17</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 14">
+      <p class="pergunta">Qual o valor da expressão 3<sup>6</sup> . 3<sup>-2</sup> ?</p>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>81</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>12</button>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>27</button>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>91</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 15">
+      <p class="pergunta">Nando comprou 5 livros diversos em uma promoção, custando R$ 17,00 cada um. Ele pagou com 5 notas de R$ 20,00. Qual foi o troco recebido por Nando?</p>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>R$ 17</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>R$ 12</button>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>R$ 18</button>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>R$ 15</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 16">
+      <p class="pergunta">Das operações abaixo, indique aquela em que seu resultado <b>NÃO</b> É 8:</p>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>(72 ÷ 12) + 2</button>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>(3 x 5) – 8</button>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>120 ÷ 15</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>(27 ÷ 3) - 1</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 17">
+      <p class="pergunta">Um grupo com mais de 25 e menos de 35 alunos deve ser acomodado nas mesas de um refeitório. Em cada mesa cabem, no máximo, 6 alunos. Para que todas as mesas fiquem ocupadas com a capacidade máxima, o grupo deve ter:</p>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>28 alunos</button>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>29 alunos</button>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>30 alunos</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>31 alunos</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 18">
+      <p class="pergunta">Qual a probabilidade de, lançando um dado, o resultado ser um número par?</p>
+      <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>25%</button>
+      <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>75%</button>
+      <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>100%</button>
+      <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>50%</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 19">
+    <p class="pergunta">De quantos modos podemos colocar 6 pessoas em uma fila?</p>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>720</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>360</button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>480</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>600</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 20">
+    <p class="pergunta">A idade de Davi é 24 anos e a idade de Ana é 36 anos. Qual é a razão entre as idades de Davi e Ana?</p>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>7/4</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>6/10</button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>3/10</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>6/4</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 21">
+    <p class="pergunta">Transforme o valor 27.900 em notação científica:</p>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" [disabled]="desativaBotao" ion-button block default>2,79 × 10<sup>5</sup></button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" [disabled]="desativaBotao" ion-button block default>0,279 × 10<sup>2</sup></button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" [disabled]="desativaBotao" ion-button block default>279 × 10<sup>1</sup></button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" [disabled]="desativaBotao" ion-button block default>2,79 × 10<sup>4</sup></button>
+  </div>
+
+  <div class="resultado" *ngIf = "contador == 22">
+    <ion-card-header id="resultado">
+    <p id="textoResultado">Seu resultado foi: {{pontos}}/{{questao}}</p>
+    <p id="textoResultado">Tempo: {{minutos}}:{{segundos}}</p>
+    <button class="botao" ion-button block default (click)="menu()">MENU PRINCIPAL</button>
+    <button class="botao"  ion-button block default (click)="tentarNovamente()">TENTAR NOVAMENTE</button>
+    </ion-card-header>
+  </div>
+
+</ion-content>

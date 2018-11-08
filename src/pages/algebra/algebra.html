@@ -1,0 +1,187 @@
+<!--
+  Generated template for the QuizPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton="false" color="secondary">
+    <ion-title>Quiz</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="main-quiz">
+  <div *ngIf = "acabou == ''">
+    <p id="textoQuestao">Questão {{questao}}</p>
+    <p id="textoTempo">{{minutos}}:{{segundos}}</p>
+  </div>
+  <div class="questao" *ngIf = "contador == 1">
+    <p class="pergunta">A equação do segundo grau que apresenta como solução os números -3 e -5 é:</p>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">x<sup>2</sup> – 8x + 8 =0</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">x<sup>2</sup> – 8x - 8 =0</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">x<sup>2</sup> + 8x + 15 =0 </button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">x<sup>2</sup> + 8x - 15 =0</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 2">
+    <p class="pergunta">Em um determinado mapa, 13 cm representam 91 km. Nesse mesmo mapa, 23 cm representam:</p>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">101 km</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">121 km</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">141 km</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">161 km</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 3">
+    <p class="pergunta">Seja x<sup>2</sup> + y<sup>2</sup> = 60. Qual é o valor positivo de x + y, sabendo que xy = 20?</p>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">5</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">10</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">15</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">20</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 4">
+    <p class="pergunta">O resultado do agrupamento do monômio 3ax + 5bx – 12 ax – 15 bx + 4x é:</p>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">15 ax – 10bx + 4x</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">-9ax – 10 bx + 4x</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">9ax + 10bx – 4x</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">8bx – 11x</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 5">
+    <p class="pergunta">A forma fatorada da expressão algébrica x<sup>4</sup> – 9 é:</p>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">(x<sup>2</sup> + 3) . (x<sup>2</sup> – 3)</button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">(x<sup>2</sup> - 3) . (x<sup>2</sup> – 3)</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">(x<sup>2</sup> + 3x + 3). x<sup>2</sup></button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">(x<sup>2</sup> + 3x + 3) . (x<sup>2</sup> – 3x + 3) </button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 6">
+    <p class="pergunta">Uma fábrica mantém jornadas de trabalho de 6 horas diárias, produzindo 160 mil produtos mensalmente. Quantas horas diárias serão necessárias para produzir 240 mil produtos?</p>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">2 horas</button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">4 horas</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">9 horas</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">5 horas</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 7">
+    <p class="pergunta">Um viajante de carro faz um determinado percurso em 2h, a uma velocidade média de 75 km/h. Se fizesse o mesmo percurso a uma velocidade média de 100 km/h, quanto tempo ganharia?</p>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">1 hora e meia</button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">40 minutos</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">30 minutos</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">50 minutos</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 8">
+    <p class="pergunta">Para encher um tanque são necessárias 60 vasilhas de 6 litros cada uma. Se forem usadas vasilhas de 2 litros cada uma, quantas serão necessárias?</p>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">120</button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">130</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">160</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">180</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 9">
+    <p class="pergunta">Qual o resultado de o dois elevado a décima potência subtraido por dez elevado ao cubo?</p>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">24</button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">1024</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">1000</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">18</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 10">
+    <p class="pergunta">Se A = – x – 2y + 10 e B = x + y + 1 e C = – 3x – 2y + 1, então A – B – C é igual a:</p>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">– 5x – 3y + 8</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">5x + y + 12</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">x – y + 8</button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">– 3x – 5y + 10</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 11">
+    <p class="pergunta">O valor de x – yx – y quando x = 2 e y = – 2 é:</p>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">14</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">-14</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">7</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">-18</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 12">
+    <p class="pergunta">Se a = 64 e b = 36 qual será o valor da expressão &radic;a+b / &radic;a+b:</p>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">5/7</button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">7/5</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">7/10</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">5/10</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 13">
+    <p class="pergunta">Se x = 3 qual será o valor dessa expressão 2x<sup>4</sup> + 4x - 5:</p>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">69</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">100</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">169</button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">80</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 14">
+    <p class="pergunta">Qual é o dobro do número que multiplicado por x resulta em 12 na equação: [(9x . 2) + 7 - 17x + (-7)] . 3 = 144 -100 + (-32):</p>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">3</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">6</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">9</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">4</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 15">
+    <p class="pergunta">A equação x3 + mx2 + 2x + n = 0, em que m e n são números reais, admite 1 + i (i sendo a unidade imaginária) como a raiz. Então m e n valem, respectivamente:</p>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">0 e -2</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">2 e 2</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">-2 e 0</button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">0 e 2</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 16">
+    <p class="pergunta">O polinômio de coeficientes inteiros, de menor grau possível, que tem como raízes 2 e i, pode ser:</p>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">x<sup>3</sup> – 2x<sup>2</sup> – x + 2</button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">x<sup>2</sup> – (2 + i) x + 2i</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">x<sup>3</sup> + (2 – i) x – 2</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">x<sup>3</sup> – 2x<sup>2</sup> + x – 2</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 17">
+    <p class="pergunta">Quanto vale a – b, se a = 2/3 e b = –3/5?</p>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">5/19</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">19/15</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">5/15</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">15/19</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 18">
+    <p class="pergunta">Uma máquina varredeira limpa uma área de 5.100 m<sup>2</sup> em 3 horas de trabalho. Nas mesmas condições, em quanto tempo limpará uma área de 11.900 m<sup>2</sup>?</p>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">5 horas</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">7 horas</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">9 horas</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">11 horas</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 19">
+    <p class="pergunta">Um muro foi construído por 8 operários em 30 dias. Quantos dias seriam necessários para a construção deste mesmo muro, se fossem utilizados 12 operários?</p>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">15 dias</button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">18 dias</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">19 dias</button>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">20 dias</button>
+  </div>
+
+  <div class="questao" *ngIf = "contador == 20">
+    <p class="pergunta">Um chuveiro com potência de 4.800 kWh consome 4,8 kW por hora. Uma pessoa que toma dois banhos diariamente, de 10 minutos cada, consumirá, em sete dias, quantos kW?</p>
+    <button class="botao" [style.background]="corCorreta" (click)="mudaCor(3)" ion-button block default [disabled]="desativaBotao">11,2</button>
+    <button class="botao" [style.background]="corErrada2" (click)="mudaCor(1)" ion-button block default [disabled]="desativaBotao">5,6</button>
+    <button class="botao" [style.background]="corErrada1" (click)="mudaCor(0)" ion-button block default [disabled]="desativaBotao">1,6</button>
+    <button class="botao" [style.background]="corErrada3" (click)="mudaCor(2)" ion-button block default [disabled]="desativaBotao">0,8</button>
+  </div>
+
+  <div class="resultado" *ngIf = "contador == 21">
+    <ion-card-header id="resultado">
+    <h1 id="textoResultado">Seu resultado foi: {{pontos}}/{{questao}}</h1>
+    <h1 id="textoResultado">Tempo: {{minutos}}:{{segundos}}</h1>
+    <button class="botao" ion-button block default (click)="menu()">MENU PRINCIPAL</button>
+    <button class="botao"  ion-button block default (click)="tentarNovamente()">TENTAR NOVAMENTE</button>
+    </ion-card-header>
+  </div>
+
+</ion-content>
