@@ -80,7 +80,7 @@ passaQuestao(){
   this.corErrada2 = ''
   this.corErrada3 = ''
 
-  if(this.questao < 7){
+  if(this.questao < 10){
     do{
     var y = Math.floor(Math.random() * 21) + 1;}
     while((this.lista.indexOf(y) > -1) == true);

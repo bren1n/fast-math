@@ -14,7 +14,7 @@
 
 
 <ion-content padding id="main-quiz">
-  <div *ngIf = "acabou == ''">
+  <div *ngIf = "acabou == ''" id="tempoquestao">
     <p id="textoQuestao">Questão {{questao}}</p>
     <p id="textoTempo">{{minutos}}:{{segundos}}</p>
   </div>
@@ -188,8 +188,9 @@
 
   <div class="resultado" *ngIf = "contador == 22">
     <ion-card-header id="resultado">
-    <p id="textoResultado">Seu resultado foi: {{pontos}}/{{questao}}</p>
-    <p id="textoResultado">Tempo: {{minutos}}:{{segundos}}</p>
+    <h1 id="textoResultado">Seu resultado foi: {{pontos}}/{{questao}}</h1>
+    <h1 id="textoResultado">Tempo: {{minutos}}:{{segundos}}</h1>
+    <div id="estrela"><span *ngIf = "pontos <= 4 || pontos > 4">&#9733;</span><span *ngIf = "pontos >= 5">&#9733;</span><span *ngIf = "pontos >= 7">&#9733;</span></div>
     <button class="botao" ion-button block default (click)="menu()">MENU PRINCIPAL</button>
     <button class="botao"  ion-button block default (click)="tentarNovamente()">TENTAR NOVAMENTE</button>
     </ion-card-header>
